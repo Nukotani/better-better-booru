@@ -217,7 +217,7 @@ function bbbScript() { // Wrapper for injecting the script into the document.
 
 	document.bbbInfo = function(name, value) {
 		// Document specific bbbInfo that goes along with the element prototype method.
-		var imgContainer = document.getElementById("image-container");
+		var imgContainer = document.getElementByClassName("image-container")[0];
 
 		if (typeof(value) !== "undefined" && imgContainer)
 			imgContainer.setAttribute("data-" + name, value);
@@ -3859,7 +3859,7 @@ function bbbScript() { // Wrapper for injecting the script into the document.
 
 	function addRandomPostLink() {
 		// Add the random post link and hotkey back to posts.
-		var optionListItem = document.getElementById("add-to-pool-list") || document.getElementById("add-notes-list") || document.getElementById("add-artist-commentary-list");
+		var optionListItem = document.getElementById("post-option-add-to-pool") || document.getElementById("add-notes-list") || document.getElementById("add-artist-commentary-list");
 
 		if (!optionListItem || !add_random_post_link || gLoc !== "post")
 			return;
